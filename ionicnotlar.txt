@@ -1,0 +1,7 @@
+www.ionicframework.com
+>npm install -g ionic
+proje açmak
+>ionic start meditasyonApp sidemenu
+>cd meditasyonApp
+>ionic serve --lab
+

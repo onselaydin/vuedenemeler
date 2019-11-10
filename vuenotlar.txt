@@ -1,0 +1,171 @@
+https://vuejs.org/
+https://codepen.io/oncell/
+npm install -g vue-cli
+yeni proje için
+#vue init simple projeadi
+#vue init webpack projeadi
+#vue İNİT webpack-simple projeadi
+C:\testvue>vue init webpack-simple .
+C:\testvue>npm install
+C:\testvue> npm run dev
+.babelrc = ecmascript 6 yı 5 e çeviren konfügrasyon dosyasıdır.
+single file bir template 3 elemente sahip olmalıdır. 
+<template></template> <script></script> ve <style></style>
+
+--Canlıya alma Build işlemi--
+# npm run build
+dist klasörü oluşuyor. index.html için <script src="/dist/build.js"></script> getiriyor. 
+index'i ve dist içini al sunucuya koy çalıştır.
+
+--yararlı linkler--
+https://vuejs.org/v2/guide/single-file-components.html
+render fonksiyonu detayları https://vuejs.org/v2/guide/render-function.html
+vue developer tool
+https://github.com/vuejs/vue-devtools
+kendo ui https://www.telerik.com/kendo-vue-ui/components/grid/
+
+https://jsfiddle.net/gkandemir/e1hjuL2v/20/
+https://vuejs.org/v2/guide/components.html
+https://vuejs.org/v2/guide/components-registration.html
+
+https://vuejs.org/v2/guide/components.html#Passing-Data-to-Child-Components-with-Props
+https://vuejs.org/v2/guide/components.html#Listening-to-Child-Components-Events
+https://vuejs.org/v2/guide/state-management.html
+
+https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots
+https://vuejs.org/v2/guide/components.html#Dynamic-Components
+https://vuejs.org/v2/guide/components-edge-cases.html
+
+
+
+
+Yeni açılan bir komponeti main.js içine tanımla
+örneğin
+import Home from "./Home"
+
+Vue.component("lamb-component",Home) 
+
+Not: p h vs etiketileri template içinde div içine almalıyız.
+
+--iç içe komponent tanımlama--
+<template>
+<div>
+    <lamp-status v-for="Lamp in 5" :key="Lamp"></lamp-status>
+</div>
+    
+</template>
+
+<script>
+import LampStatus from "./LampStatus";
+
+export default {
+    components : {
+        "lamp-status" : LampStatus
+    }
+}
+</script>
+----------------------------------
+style tanımlarken <style scope></style> eklersen bir birini ezmezler.
+scope komponent bazlı etkin hale getiriyor
+
+--Componentler Arası İletişim-- componentimize attribute tanımlama -- parentten chilede veri gönderme--
+v-bind kısa yolu : dedir.
+attribute tanımlamak ve dışardan komponenti iletişime açmak için props kullanıyoruz
+örneğin:
+export default {
+    props : ["name"]
+}
+Not: propsu method içinde de kullanabiliriz.
+örneğin:
+methods : {
+    swtichName(){
+        return this.name.split("").reverse().join("");
+    }
+}
+--props validation--
+props : {
+    name : {
+        type : String,
+        default : "onsel.dev"
+    }
+}
+
+-- Chiledden Parente veri göndermek--
+method içinde $emit ile yayma işlemi yapacağız.
+sendToParent(){
+    this.$emit("data","Onsel AYDIN");
+}
+Aslında emit ile bir @click gibi bir event yaptık.
+
+--child dan childa veri göndermek--
+Bu mümkün değil. Fakat bir yol var. Buda parent kullanarak yapılır.
+
+--event bus-- veri iletişi yolurud --
+main.js de export const eventBus = new Vue(); tanımlıyoruz.
+kullanacağımız componente import edeceğiz. script tagına
+import eventBus from "../main";
+
+chiledlar içinde eventbusları alacağımız,dinlebileceğimiz created oluşturacağız 
+created(){
+    eventBus.$on ile alım yapıyorum
+}
+
+
+--Proje oluşturmak--
+Klasör aç içine gir
+>vue init webpack-simple ./   //burada nokta slash bulunduğu klasöre projeyi aç anlamındadır
+>npm install //package.json daki bağımlılıkları yükler
+
+--bootstarp--
+bootstarp kurmak için siteden cdn linkini al ve index head tagına yapıştır.
+
+--component içine content göndermek( slot kullanımı)--
+h1,p,div vs göndermek...
+örnek contentimizin içine slot tagı ekliyoruz ve tagı kullandığımız
+yerde h1,p vs tagları eklersin.
+<template>
+    <div>
+        <slot></slot>
+    </div>
+</template>
+Not: birden fazla slot kullanabiliyoruz.
+<h1 slot="heading">10 Kasım</h1>
+<p slot="content">Atatürkü anıyoruz...</p>
+Not: slot içine değer gelmezse default taglar ekleyebiliriz.
+<slot name="writer>
+    <h1>author</h1>
+    <p>hiç bir içerik gelmedi. Burası aktif</p>
+</slot>
+
+Alt + aşağı yukarı tuşlarla kursörün bulunduğu satırı taşıyabiliriz.
+Ctrl + K + C ile seçili satırları commentler.
+
+--Dinamik komponentler--
+sanki menulerde kullanılabilir :)
+bunun için vue nün tanıdığı <component></component> tagı ile yapılır.
+butonla yada başka yöntemle component çağırma
+Bir componentten diğerine geçerken yeniden renderlanır diğer ölür.
+componentin destroy edilip tekrar renden edilmesini istemiyorsak
+<keep-alive></keep-alive>  takıgı kullanılır.
+
+
+--lifecycle event hook--
+component geçişerinin durumunu öğrenmek için aşağıdaki eventleri kullanırız.
+
+created(){
+    console.log("created");
+}
+destroyed(){
+    console.log("destroyed");
+},
+activated(){
+    console.log("Deactivated");
+},
+deactivated(){
+    console.log("deactivated");
+}
+
+--v-if kullanımı--
+<div v-if="productList.length > 0"> </div>
+
+
