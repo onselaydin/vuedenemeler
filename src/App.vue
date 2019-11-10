@@ -1,5 +1,8 @@
 <template>
-<div class="container">
+<div>
+  <appBasvuruFormu></appBasvuruFormu>
+</div>
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
 
@@ -16,13 +19,13 @@
         </component>
       </keep-alive>
       
-      <!-- <app-memory>
+       <app-memory>
         <h1 slot="heading">10 Kasım</h1>
         <p slot="content">Atatürkü anıyoruz...</p>
-      </app-memory> -->
+      </app-memory>
     </div>
   </div>
-</div>
+</div> -->
  
 </template>
 
@@ -31,6 +34,7 @@
 import Memory from "./gelismis/Memory"
 import NewMemory from "./gelismis/NewMemory"
 import Author from "./gelismis/Author"
+import BasvuruFormu from "./formlar/BasvuruFormu"
 
   export default {
     data: function() {
@@ -42,7 +46,8 @@ import Author from "./gelismis/Author"
     components : {
       appMemory : Memory,
       appNewMemory : NewMemory,
-      appAuthor : Author
+      appAuthor : Author,
+      appBasvuruFormu : BasvuruFormu
     }
   }
 </script>

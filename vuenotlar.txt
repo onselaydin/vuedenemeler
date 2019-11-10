@@ -168,4 +168,6 @@ deactivated(){
 --v-if kullanımı--
 <div v-if="productList.length > 0"> </div>
 
-
+--input dan veri almak için--
+v-model tanımlarız ve {{ username }} ile çağırabiliriz.
+<input type="text" id="username" class="form-control" v-model="username">
