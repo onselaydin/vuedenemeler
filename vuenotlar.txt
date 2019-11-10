@@ -36,6 +36,9 @@ https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots
 https://vuejs.org/v2/guide/components.html#Dynamic-Components
 https://vuejs.org/v2/guide/components-edge-cases.html
 
+https://vuejs.org/v2/guide/forms.html
+
+
 
 
 
@@ -171,3 +174,36 @@ deactivated(){
 --input dan veri almak için--
 v-model tanımlarız ve {{ username }} ile çağırabiliriz.
 <input type="text" id="username" class="form-control" v-model="username">
+
+--Input Modifier--
+input text e bir değer girip başka kontole geçince bind olması için <input type="text" v-model.lazy="userData.Password">
+lazy kullanırız.
+inputa number kontrolü yaptırmak için v-model.lazy.number dememiz yetitiyor. lazy kullanmazsak two-way binding oluyor.
+Performans konusunda sıkıntılar olabilir.
+Baştaki Sondaki boşlukları temizlemek için v-model.trim yada v-model.lazy.trim
+
+--checkbox dan veri almak--
+önce data içinde bir array değişken oluştur.
+örneğin ilgi alanları grubunda kaç tane checkbox varsa model isimleri aynı olsun. 
+--radio button --
+v-model değişkeni data içinde oluştur. Bu sefer array olmayacak.
+örneğin cinsiyet grubu radio kontrollerin v-model isimleri aynı olacak.
+--selected kontrolü--
+örnek illeri listelemek data da array oluştur içine illeri yaz(cities).ikinci bir normal değişken oluştur(city)
+<select class="form-control">
+<option v-model="userData.selectedCity" :selected="city == 'Artvin'"
+    v-for="city in userData.cities" v-bind:key="city">{{ city }}</option>
+</select>
+
+-- Kendi form kontrolümüzü yapmak --
+CustomMyControl.vue kontol et. $emit ve props ile kendi kontrolümüzü yaptık.
+https://github.com/onselaydin/vuedenemeler/tree/master/src/formlar
+
+Not: Bir <form> tagı içinde bir button varsa gönderme işlemi yapmaya çalışır.
+Aşağıdaki gibi prevent ile bu engellenebilir. prevent de bir Modifier dir.
+Buttona tıklandığında form yenilenmeyecek.
+
+<button 
+    @click.prevent="submit"
+    class="btn btn-primary">Gönder!
+</button>
