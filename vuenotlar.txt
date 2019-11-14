@@ -38,6 +38,9 @@ https://vuejs.org/v2/guide/components-edge-cases.html
 
 https://vuejs.org/v2/guide/forms.html
 
+https://github.com/pagekit/vue-resource/blob/develop/docs/resource.md
+https://firebase.google.com/docs/reference/rest/database/
+
 Yeni açılan bir komponeti main.js içine tanımla
 örneğin
 import Home from "./Home"
@@ -209,10 +212,74 @@ Buttona tıklandığında form yenilenmeyecek.
 --directives--
 v-if, v-for vsvs.
 
+--filters--
+Gelen verinin transform edilmesi...
+Not: Global bişey tanımlamak için main.js dosyasında tanımla.
+datanın altına ekle. {{ degisken | toUpperCase() }}
+filters : {
+    toUpperCase(value){
+        return value.toUpperCase();
+    }
+}
+
+https://www.w3schools.com/js/js_string_methods.asp
+
 --Http Sunucuya Bağlanma--
+Dış dünya ile bağlantıya geçmek için vue.resource kullanılır
+>npm install vue-resource
+
 main.js e import VueResource from "vue-resource";
 Vue.use(VueResource);
 componentine git
+örnek:
+methods içine fonksiyon yarat
+getUsers() {
+    this.$http.get("http://localhost/blabla")
+    .then((response) => {
+        let data = response.data;
+        for(let in data){
+            console.log(data);
+        })
+    }
+}
+Not: url yi Global olarak tanımlamak için main.js e gel.
+Vue.http.options.root = "http://localhost/blabla"
+sayfada ise this.$http.get("") çift tırnak arasına birşey yazmaya gerek yok.
+parametresi var ise "/" slash yazıp parametre girilebiliyor.
+
+saveUser() {
+    this.$http.post("http://localhost/blabla", {userName: this.userName})
+    .then((response) => {
+        console.log(response);
+    })
+}
+
+--Http Intercept işlemi--
+req veya res ler isteklerimizde araya girip bu isteklerde değişiklik yapmak.
+örnek request için:
+Vue.http.interceptors.push((request,next) => {
+    if(request.method == "POST"){
+        request.method == "PUT"
+    }
+    next();
+})
+örnek response için:
+Vue.http.interceptors.push((request,next) => {
+    next(response => {
+        console.log(response);
+        response.json = () => {
+            return {
+                userList : response.body
+            }
+        }
+    });
+})
+--http resource--
+post get belirmeye gerek yok.
+this.$resource("main.js den link geliyor").save({},{ userName : this.userName });
+Burada save methodunu gönderdiğinde post yapıyor,update deseydim put çalışacaktı.
+remove için delete isteği gönderiliyor.
+
 
 
 https://hub.docker.com/_/redis
@@ -238,3 +305,39 @@ OK
 "2"
 --docker redis linked container--
 docker run -it --rm --link redis1:redis --name client1 redis sh
+
+--VUE ROUTING--
+npm install --save vue-router
+main.js e tanımla
+import VueRouter from 'vue-router'
+Vue.use(VueRouter);
+src içine routes.js dosyası oluştur.
+import Profile from "./pages/Profile";
+import Imports from "./pages/Imports";
+
+export const routers = [
+    { path : '/profile', component : Profile },
+    { path : '/imports', component : Profile },
+]
+main js de import { routes } from './routers'
+const router = new VueRouter({
+  routes
+});
+
+vue itin webpack proje adı şeklinde proje oluşturusak. Routerlar otomatik tanımlı geliyor.
+{ path: '/home', name: 'Home', component: Home },
+// { path: '/home/:id', name: 'Home', component: Home },
+sayfada id yi almak için
+<p> gelen id: {{ id }}</p>
+data() {
+    return {
+        id : $this.route.params.id
+    }
+}
+
+-----------------
+
+https://vuejs.org/v2/examples/grid-component.html
+
+-------------
+--State yönetimi Vuex--
