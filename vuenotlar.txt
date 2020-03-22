@@ -4,7 +4,7 @@ npm install -g vue-cli
 yeni proje için
 #vue init simple projeadi
 #vue init webpack projeadi
-#vue İNİT webpack-simple projeadi
+#vue init webpack-simple projeadi
 C:\testvue>vue init webpack-simple .
 C:\testvue>npm install
 C:\testvue> npm run dev
@@ -40,6 +40,9 @@ https://vuejs.org/v2/guide/forms.html
 
 https://github.com/pagekit/vue-resource/blob/develop/docs/resource.md
 https://firebase.google.com/docs/reference/rest/database/
+
+https://vuejs.org/v2/api/
+
 
 Yeni açılan bir komponeti main.js içine tanımla
 örneğin
