@@ -1,5 +1,7 @@
 <template>
 <div>
+  <p v-color:background="'green'">directive test</p>
+  <p v-color="'red'">directive test 22</p>
   <appBasvuruFormu></appBasvuruFormu>
 </div>
 <!-- <div class="container">

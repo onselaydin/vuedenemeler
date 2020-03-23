@@ -183,6 +183,8 @@ lazy kullanırız.
 inputa number kontrolü yaptırmak için v-model.lazy.number dememiz yetitiyor. lazy kullanmazsak two-way binding oluyor.
 Performans konusunda sıkıntılar olabilir.
 Baştaki Sondaki boşlukları temizlemek için v-model.trim yada v-model.lazy.trim
+örnek.
+<input type="text" @keyup.enter>
 
 --checkbox dan veri almak--
 önce data içinde bir array değişken oluştur.
@@ -214,6 +216,19 @@ Buttona tıklandığında form yenilenmeyecek.
 
 --directives--
 v-if, v-for vsvs.
+<p v-text="'Bu bir directive örneğidir.'"></p>
+<p v-html="'<strong>Bu bir html directividir</strong></p>
+--Custom Directive--
+main.js e eklediğimiz kendi directiveimiz global oluyor.
+Vue.directive("color",{
+    bind(el,binding,vnode){
+        el.style.backgroundColor = binding.value,
+    }
+});
+kullanmak için <p v-color="'green'">özel directive yaptık uyguladık.</p>
+binding ile dışardan veri alabiliris.
+
+
 
 --filters--
 Gelen verinin transform edilmesi...
@@ -224,16 +239,43 @@ filters : {
         return value.toUpperCase();
     }
 }
+data(){
+    return{
+        products:["Monitör","Klavye","Masa","Fare","Kitap","Şişe","HardDisk"],
+        searchText:''
+    }
+}
+computed: {
+    filtered(){
+        return this.products.filter((element)=>{
+            return element.match(this.searchText);
+        })
+    }
+}
+
+<li v-for="product in filtered"> {{product}}</li>
+
+--mixins ve Scope--
+Kod tekrarını engellemek için yapılır. Ayrı bir js oluştur sadece export default kodlarını ekle + kullanacağın yerde import et.
+Her yerden import ile çağır kullan.
+mixins : [ buraya import ettiğin js i ekle ]
 
 https://www.w3schools.com/js/js_string_methods.asp
 
 --Http Sunucuya Bağlanma--
 Dış dünya ile bağlantıya geçmek için vue.resource kullanılır
+https://github.com/pagekit/vue-resource
 >npm install vue-resource
 
 main.js e import VueResource from "vue-resource";
 Vue.use(VueResource);
 componentine git
+
+https://firebase.google.com/
+Proje ekle + ya tıkla. Projeye bir isim ver(vuejs-vue-resource) Devam. Proje oluştuktan sonra Database tıkla.
+Testmodunda yapacağız. Authentication  test de olmuyor. Etkinleştire tıklıyoruz.
+
+
 örnek:
 methods içine fonksiyon yarat
 getUsers() {

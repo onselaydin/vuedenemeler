@@ -11,6 +11,17 @@ export const eventBus = new Vue({
   }
 });
 
+Vue.directive("color", {
+  bind(el,binding,vnode){
+    if(binding.arg == "background"){
+      el.style.backgroundColor=binding.value
+    }else{
+      el.style.color = binding.value;
+    }
+    
+  }
+})
+
 Vue.component("lamp-component",Home)
 Vue.component("user-component",User)
 
