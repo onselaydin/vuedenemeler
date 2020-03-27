@@ -3,7 +3,7 @@ https://codepen.io/oncell/
 npm install -g vue-cli
 yeni proje için
 #vue init simple projeadi
-#vue init webpack projeadi
+#vue init webpack projeadi  -- Bununla proje oluşturursak router vs sormakta.
 #vue init webpack-simple projeadi
 C:\testvue>vue init webpack-simple .
 C:\testvue>npm install
@@ -42,6 +42,10 @@ https://github.com/pagekit/vue-resource/blob/develop/docs/resource.md
 https://firebase.google.com/docs/reference/rest/database/
 
 https://vuejs.org/v2/api/
+
+--custom resource tanımlama --
+https://github.com/pagekit/vue-resource/blob/develop/docs/resource.md
+
 
 
 Yeni açılan bir komponeti main.js içine tanımla
@@ -272,6 +276,8 @@ Vue.use(VueResource);
 componentine git
 
 https://firebase.google.com/
+https://firebase.google.com/docs/reference/rest/database
+
 Proje ekle + ya tıkla. Projeye bir isim ver(vuejs-vue-resource) Devam. Proje oluştuktan sonra Database tıkla.
 Testmodunda yapacağız. Authentication  test de olmuyor. Etkinleştire tıklıyoruz.
 
@@ -325,6 +331,8 @@ this.$resource("main.js den link geliyor").save({},{ userName : this.userName })
 Burada save methodunu gönderdiğinde post yapıyor,update deseydim put çalışacaktı.
 remove için delete isteği gönderiliyor.
 
+--Vue-material--
+npm install vue-material --save
 
 
 https://hub.docker.com/_/redis
@@ -386,3 +394,18 @@ https://vuejs.org/v2/examples/grid-component.html
 
 -------------
 --State yönetimi Vuex--
+
+--CSS Kütüphaneleri--
+animate.css -https://daneden.github.io/animate.css/
+image hover css - https://www.imagehover.io/
+loading io --https://loading.io/
+hint css -- https://kushagra.dev/lab/hint/
+http://getskeleton.com/
+https://minicss.org/
+
+
+code snippet
+http://zinzinzibidi.com/web_tasarim/web_tasarimi/visual_studio_code_snippets_kullanimi
+
+https://www.youtube.com/watch?v=iygwftU69nI&list=PLsGvMLC84GeTJeNRPH5P4w_S7tHSviLf6&index=9
+https://docs.microsoft.com/tr-tr/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client
