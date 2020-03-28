@@ -119,6 +119,8 @@ created(){
     eventBus.$on ile alım yapıyorum
 }
 
+$emit() metodu ile veri gönderilir
+$on() metodu ile veri alınır.
 
 --Proje oluşturmak--
 Klasör aç içine gir
@@ -360,10 +362,12 @@ OK
 docker run -it --rm --link redis1:redis --name client1 redis sh
 
 --VUE ROUTING--
+https://router.vuejs.org/
 npm install --save vue-router
 main.js e tanımla
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
+
 src içine routes.js dosyası oluştur.
 import Profile from "./pages/Profile";
 import Imports from "./pages/Imports";
@@ -388,12 +392,34 @@ data() {
     }
 }
 
+main.js de
+//routelar tetiklenmeden önce yapılacakları burada yapılır
+router.beforeEach((to,from,next) => {
+
+});
+
+--hash fragment--
+const router=new VueRouter({
+	routes;
+	mode : 'history',
+	scrollBehavior(to,from,savedPosition){
+		return { x: 0, y : 800} //800 pixel aşağı in
+	}
+});
+
+
 -----------------
 
 https://vuejs.org/v2/examples/grid-component.html
 
 -------------
 --State yönetimi Vuex--
+redux ile flux ın bir implementation dur.
+bir componentde data içinde sakladığımız tüm verilere state diyebiliriz.
+
+
+
+
 
 --CSS Kütüphaneleri--
 animate.css -https://daneden.github.io/animate.css/
