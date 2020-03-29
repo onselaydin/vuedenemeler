@@ -1,0 +1,16 @@
+{
+    "presets": [
+      ["env", { "modules": false }],
+      "stage-3"
+    ]
+  }
+
+/*
+...mapGetters({ yapınca bu dosyayı ekledik.
+Bunun sebebi benim size gönderdiğim dosyada .babelrc dosyasının olmamasıdır.
+ (.) Nokta ile başlayan dosyalar Unix sistemlerinde Gizli dosyalar olduğu için 
+ sıkıştırırken dosyaları .babelrc dahil olmadığı için size gelmedi.
+
+Bunun için dediğim gibi; Proje klasörünün hemen altında .babelrc dosyası 
+oluşturduktan sonra aşağıdaki kodları içerisine yazmanız gerekiyor:
+*/

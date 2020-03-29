@@ -414,8 +414,15 @@ https://vuejs.org/v2/examples/grid-component.html
 
 -------------
 --State yönetimi Vuex--
+https://vuex.vuejs.org/guide/
 redux ile flux ın bir implementation dur.
 bir componentde data içinde sakladığımız tüm verilere state diyebiliriz.
+Tüm dataları central store da tutmalıyız.
+Get ile güncel veri okunur.
+src klasörüne store isimli bir klasör oluştur. İçine store.js isimli bir dosya oluştur.
+npm install --save vuex
+component içinde data() içinde tanımladıklarımızı bu store içinde tanımlayacağız.
+github vuedenemeler de store.js dosyası detayları var.
 
 
 
