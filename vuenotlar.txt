@@ -442,3 +442,19 @@ http://zinzinzibidi.com/web_tasarim/web_tasarimi/visual_studio_code_snippets_kul
 
 https://www.youtube.com/watch?v=iygwftU69nI&list=PLsGvMLC84GeTJeNRPH5P4w_S7tHSviLf6&index=9
 https://docs.microsoft.com/tr-tr/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client
+
+AWS Account
+Account number: 580376324907
+https://us-west-2.console.aws.amazon.com/console/home?region=us-west-2
+
+
+https://console.firebase.google.com/
+
+
+--npm paketi yapmak--
+https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry
+npm login 
+bir klasör aç vue dosyalarını oraya koy. package.json dosyasını içine ekle. 
+Shell aç ve bu klasöre gir. > npm publish
+Paketi kaldırmak için shell e gir. > npm unpublish kaketadi -f 
+
