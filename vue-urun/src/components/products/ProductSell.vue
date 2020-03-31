@@ -1,0 +1,141 @@
+<template>
+  <div class="container">
+       <div class="loading" :style="isLoading">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    <div class="row">
+      <div class="col-6 offset-3 pt-3 card mt-5 shadow">
+        <div class="card-body">
+          <h3>Ürün Çıkışı</h3>
+          <hr />
+          <div class="form-group">
+            <label>Ürün Adı</label>
+            <!-- count alanı 0 sa seçtirme :disabled="product.count == 0" -->
+            <select class="form-control" v-model="selectedProduct" @change="productSelected">
+                <option selected disabled>Lütfen bir ürün seçiniz...</option>
+              <option
+              :disabled="product.count == 0"
+               :value="product.key" v-for="product in getProducts">{{product.title}}</option>
+            </select>
+          </div>
+
+          <transition name="fade" mode="out-in">
+            <div class="card mb-2 border border-danger" v-if="product !== null">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <div class="mb-3">
+                      <span class="badge badge-info">Stok : {{ product.count }}</span>
+                      <span class="badge badge-primary">Fiyat : {{product.price | currency}}</span>
+                    </div>
+                    <p class="border border-warning p-2 text-secondary">{{ product.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+          <div class="form-group">
+            <label>Adet</label>
+            <input type="text" v-model="product_count" class="form-control" placeholder="Ürün adetini giriniz.." />
+          </div>
+          <hr />
+          <button @click="save" :disabled="saveEnabled" class="btn btn-primary">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      selectedProduct: null,
+      product: null,
+      product_count: null,
+      saveButtonClicked : false
+    };
+  },
+  computed: {
+    ...mapGetters(["getProducts"]),
+    isLoading(){
+        if(this.saveButtonClicked){
+            return {
+                display : "block"
+            }
+        }
+        else {
+            return {
+                display : "none"
+            }
+            
+        }
+    },
+    saveEnabled(){
+        // return false;
+        // console.log(this.product.title);
+        if(this.selectedProduct !==null && this.product_count > 0 )
+        {
+            return false;
+        }else{
+            return true;
+        }
+    }
+  },
+  methods: {
+    productSelected() {
+      //product.js de getters daki getProduct metodunu çağırıyoruz.
+      console.log(this.selectedProduct);
+      this.product = this.$store.getters.getProduct(this.selectedProduct)[0];
+      //console.log(this.product[0]);
+    },
+    save(){
+         saveButtonClicked = true;
+        let product = {
+            key : this.selectedProduct,
+            count : this.product_count
+        }
+        //asenkron işlemler için dispatch ile product.js deki selProductu çağırıyoruz.
+        this.$store.dispatch("sellProduct",product)
+    },
+
+    //ekrandan çıkılırsa uyaran metod.
+    beforeRouteLeave(to, from, next){
+
+         if((this.selectedProduct !== null || this.product_count > 0) && !this.saveButtonClicked )
+             {
+                 if(confirm("Kaydedilmemiş veriler var. Çıkılsınmı?")){
+                     next(true); //çıkılmasın
+                 }else{
+                     next(false);//çıkılsın
+                 }
+                 
+             }
+            else {
+                next();
+            }
+    }
+  }
+};
+</script>
+
+<style scoped>
+    .border-danger {
+    border-style: dashed !important;
+    }
+    .fade-enter {
+    opacity: 0;
+    }
+    .fade-enter-active {
+    transition: opacity 0.3s ease-out;
+    }
+    .fade-leave {
+    }
+    .fade-leave-active {
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+    }
+</style>
