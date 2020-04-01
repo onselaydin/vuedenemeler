@@ -458,3 +458,19 @@ bir klasör aç vue dosyalarını oraya koy. package.json dosyasını içine ekl
 Shell aç ve bu klasöre gir. > npm publish
 Paketi kaldırmak için shell e gir. > npm unpublish kaketadi -f 
 
+
+https://bootswatch.com/
+temaları değiştirip değiştirip bize sunar.
+
+--axios--
+Dış dünyayla bağlantı kurmak için kullanacağım.
+Bu 3.party bir uygulama main.js de tanımlamana gerek yok.
+https://github.com/axios/axios
+https://vue-blog-ee04d.firebaseio.com/
+
+
+
+
+<button type="submit" @click.prevent="verileriGetir">Verileri Getir</button>
+
+"prevent" kullanarak sayfanın refresh olmasını engellersiniz.
