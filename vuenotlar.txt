@@ -474,3 +474,12 @@ https://vue-blog-ee04d.firebaseio.com/
 <button type="submit" @click.prevent="verileriGetir">Verileri Getir</button>
 
 "prevent" kullanarak sayfanın refresh olmasını engellersiniz.
+
+
+--yandex api--
+güzel apiler var.
+https://tech.yandex.com/
+Translate api key
+trnsl.1.1.20200401T094538Z.073b60d755089cfc.2309905a02dc2c5f53373c73f833b8c718b051b2
+
+
