@@ -45,7 +45,7 @@ export const store = new Vuex.Store({
             }
             //return promise dönsün diye yaptım. Auth.vue de onSubmit then ile router ile yönlendirdik.
             return axios.post(
-            authLink + "AIzaSyAsKQgrRBYK5yNom081iYFRhTE71MQRyRs",
+            authLink + "Burayafirebasekeyigecelek",
             { email : authData.email, password : authData.password, returnSecureToken : true }
             ).then(response => {
                 console.log(response)
