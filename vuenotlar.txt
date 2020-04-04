@@ -103,10 +103,18 @@ props : {
 }
 
 -- Chiledden Parente veri göndermek--
-method içinde $emit ile yayma işlemi yapacağız.
+method içinde $emit ile yayma işlemi yapacağız.Emit yaymak demek.
+child=>Parent arası iletişim(Custom Events)
+Yaptığımız componentden çağırdığımız yere veri gönderme... 
+Bu child de bir metod UserDetail.vue
 sendToParent(){
     this.$emit("data","Onsel AYDIN");
 }
+
+Parent de yani app.vue
+<app-user-detail @data=""></app-user-detail>
+
+
 Aslında emit ile bir @click gibi bir event yaptık.
 
 --child dan childa veri göndermek--
@@ -129,6 +137,9 @@ $on() metodu ile veri alınır.
 Klasör aç içine gir
 >vue init webpack-simple ./   //burada nokta slash bulunduğu klasöre projeyi aç anlamındadır
 >npm install //package.json daki bağımlılıkları yükler
+
+--Vue Cli kaldırmak--
+npm uninstall vue-cli -g
 
 --bootstarp--
 bootstarp kurmak için siteden cdn linkini al ve index head tagına yapıştır.
@@ -210,9 +221,30 @@ v-model değişkeni data içinde oluştur. Bu sefer array olmayacak.
     v-for="city in userData.cities" v-bind:key="city">{{ city }}</option>
 </select>
 
+
 -- Kendi form kontrolümüzü yapmak --
 CustomMyControl.vue kontol et. $emit ve props ile kendi kontrolümüzü yaptık.
 https://github.com/onselaydin/vuedenemeler/tree/master/src/formlar
+
+props u metod içinde de kullanabiliriz. Bu örnekte switchName medounda myProps
+<script>
+	//props:["myProps"],
+	yada 
+	props:{
+		myProps : {
+			type:String,
+			required:true,
+			default : "aliveli"
+		}
+	}
+	methods : {
+		switchName(){
+			return this.myProps.split("").reverse().join("");
+		}
+	}
+</script>
+
+
 
 Not: Bir <form> tagı içinde bir button varsa gönderme işlemi yapmaya çalışır.
 Aşağıdaki gibi prevent ile bu engellenebilir. prevent de bir Modifier dir.
