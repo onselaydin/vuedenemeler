@@ -12,6 +12,9 @@ C:\testvue> npm run dev
 single file bir template 3 elemente sahip olmalıdır. 
 <template></template> <script></script> ve <style></style>
 
+--ÖNEMLİ--
+https://cli.vuejs.org/guide/creating-a-project.html#vue-create
+
 --Canlıya alma Build işlemi--
 # npm run build
 dist klasörü oluşuyor. index.html için <script src="/dist/build.js"></script> getiriyor. 
@@ -534,3 +537,14 @@ localStorage.getItem("blabla")
 localStorage.removeItem("blabla");
 f12 ile debug ekranına geç + application tabına gel + LocalStorage gel + tanımladığın değerleri görebilirsin.
 
+--sap ui5 components--
+https://github.com/SAP/ui5-webcomponents
+https://sap.github.io/ui5-webcomponents/
+https://sap.github.io/ui5-webcomponents/playground/docs/public-module-imports/
+
+https://www.npmjs.com/package/@ui5/webcomponents
+https://github.com/SAP-samples/ui5-webcomponents-sample-vue
+
+https://medium.com/@stermi/ui5-web-components-a-step-by-step-demo-application-7931817ddae3
+
+https://www.udemy.com/course/nodejs-egitimi/learn/lecture/8700282#overview
