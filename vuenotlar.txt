@@ -582,3 +582,15 @@ Ant Design Vue
 -deployment target Server(nodejs) seç
 -development tools jsconfig.json vscode seç..
 npm run dev yap.
+
+--Klasörler--
+assets -- resimler,stil dosyaları felan.
+componenets - komponentlerimizi buraya koyuyuruz.
+layouts -- .net deki master detail layaoutlar gibi.
+middleware -- orta katmanda tüm uygulamayı kontrol edebileceğimiz bir yer.
+nodemoduls -- yüklenen paketler burda.
+pages -- Uygulamamızın temelini oluşturan sayfalarımızı oluşturduğumuz yer.
+plugins -- Dışardan aldığımız 3.party js kütüphanelerini buraya ayacağız.
+statics -- static olarak sunucuda tutacağımız şeyler buraya koyacağız.
+store -- nuxt tanımlamaları burada yapacağız.
+nuxt.config.js  -- meta tag lar title vb ayarlar burada...
