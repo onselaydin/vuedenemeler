@@ -548,3 +548,37 @@ https://github.com/SAP-samples/ui5-webcomponents-sample-vue
 https://medium.com/@stermi/ui5-web-components-a-step-by-step-demo-application-7931817ddae3
 
 https://www.udemy.com/course/nodejs-egitimi/learn/lecture/8700282#overview
+
+        --   NUXT ---
+https://ssr.vuejs.org/#what-is-server-side-rendering-ssr
+Kurulum
+npm install -g create-nuxt-app
+Uygulama oluşturmak
+önce bir klasör aç içine gir. 
+mkdir nuxttest
+cd nuxttest
+create-nuxt-app ./
+c:\>create-nuxt-app nuxttest -- şeklinde de olur.
+-bir proje ismi gir. yada boş enter
+-javascript seç
+-npm seç
+-UI frameworkler den bootstrap seçtim.
+Ant Design Vue
+  Bootstrap Vue
+  Buefy
+  Bulma
+  Chakra UI
+  Element
+  Framevuerk
+  iView
+  Tachyons
+  Tailwind CSS
+  Vuesax
+  Vuetify.js
+-Modul seçiminden Axios seç.
+-Linting tools seçme
+-testing framework şimdilik seçme
+-rendering mode Universal seç.
+-deployment target Server(nodejs) seç
+-development tools jsconfig.json vscode seç..
+npm run dev yap.
