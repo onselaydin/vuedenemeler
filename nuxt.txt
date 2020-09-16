@@ -140,8 +140,6 @@ Adaptasyon, değişimi kabullenme, değişen şartlara göre yeniden plan yapmak
 Müşteri istediği zaman istediği şeyi değiştirir çok yanlış bir yaklaşımdır.
 
 
-
-
 Agile Prensipler(Agile Principles)
 Müşterinin istediğini en hızlı olacak şekilde ver.
 Müşteri ile sık sık iletişime geç. Hızlı bildirim almak çok önemli.
@@ -164,3 +162,33 @@ self-organize takım= Kendi içinde hareket edebilen, karar alabilen, dışarıy
 Shu Ha Ri – Bir Çeviklik Benimseme Modeli. Aikido felsefesinden esinlenilmiştir.
 http://www.ilkimdilara.com/shu-ha-ri-bir-ceviklik-benimseme-modeli/
 yeni bir şey öğrenmeye nasıl yaklaşacağını anlamak için bir düşünme şeklidir
+
+Eğer müşteri ve çalışan mutluysa o proje bitmiştir başarılıdır.
+Test Drivern Development- Daha az hata daha az maliyet.
+Herşeyi paraya ekonomiye bağla.
+
+Pratikler - SCRUM,KANBAN,EXTREM PROG.
+
+Agile yaklaşımlar ile ilgili okuduğum ve önerebileceğim bazı kitaplar;
+Agile Coaching, Rachel Davies, Liz Sedley
+Agile Retrospectives, Esther Derby, Diana Larsen
+The Software Project Managers Bridge to Agility, Michele Sliger, Stacia Broderick
+Individual and Interactions, Ken Howard, Barry Rogers
+Lean Software Development, Marry&Tom Poppendieck
+Management 3.0, Jurgen Appelo
+Agile Estimating & Planning, Mike Cohn
+Coaching Agile Teams, Lyssa Adkins
+Practices of an Agile Developer, Venkat Subramaniam, Andy Hunt
+The Art of Agile Development, James Shore
+Becoming Agile in an Imperfect World, Greg Smith, Ahmed Sidky
+Organize For Complexity, Niels Pflaeging
+Agile Project Management with Scrum, Ken Schwaber
+User Stories Applied For Agile Software Development, Mike Cohn
+Mythical Man Month, Frederic Brooks
+Scrum & XP From Trenches, Henrick Knieberg
+Behind Closed Doors, Johanna Rothman, Esther Derby
+Peopleware, Tom DeMarco, Timothy Lister
+Extreme Programming Explained, Kent Beck
+Talking with Tech Leads, Patric Kua
+Clean Coder, Robert Martin
+Pragmatic Programmer, Andrew Hunt, David Thomas
