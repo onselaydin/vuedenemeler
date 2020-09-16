@@ -548,3 +548,16 @@ https://github.com/SAP-samples/ui5-webcomponents-sample-vue
 https://medium.com/@stermi/ui5-web-components-a-step-by-step-demo-application-7931817ddae3
 
 https://www.udemy.com/course/nodejs-egitimi/learn/lecture/8700282#overview
+
+db.createUser(
+   {
+     user: "mynewuser",
+     pwd: "myuser123",
+     roles: [ "readWrite", "dbAdmin" ]
+   }
+);
+
+,
+  "ConnectionStrings": {
+    "MongoConnectionString": "mongodb://mongoadmin:abc123@157.230.105.22:27017/KnowledgeDb"
+  }
