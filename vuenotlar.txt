@@ -549,15 +549,48 @@ https://medium.com/@stermi/ui5-web-components-a-step-by-step-demo-application-79
 
 https://www.udemy.com/course/nodejs-egitimi/learn/lecture/8700282#overview
 
-db.createUser(
-   {
-     user: "mynewuser",
-     pwd: "myuser123",
-     roles: [ "readWrite", "dbAdmin" ]
-   }
-);
+        --   NUXT ---
+https://ssr.vuejs.org/#what-is-server-side-rendering-ssr
+Kurulum
+npm install -g create-nuxt-app
+Uygulama oluşturmak
+önce bir klasör aç içine gir. 
+mkdir nuxttest
+cd nuxttest
+create-nuxt-app ./
+c:\>create-nuxt-app nuxttest -- şeklinde de olur.
+-bir proje ismi gir. yada boş enter
+-javascript seç
+-npm seç
+-UI frameworkler den bootstrap seçtim.
+Ant Design Vue
+  Bootstrap Vue
+  Buefy
+  Bulma
+  Chakra UI
+  Element
+  Framevuerk
+  iView
+  Tachyons
+  Tailwind CSS
+  Vuesax
+  Vuetify.js
+-Modul seçiminden Axios seç.
+-Linting tools seçme
+-testing framework şimdilik seçme
+-rendering mode Universal seç.
+-deployment target Server(nodejs) seç
+-development tools jsconfig.json vscode seç..
+npm run dev yap.
 
-,
-  "ConnectionStrings": {
-    "MongoConnectionString": "mongodb://mongoadmin:abc123@157.230.105.22:27017/KnowledgeDb"
-  }
+--Klasörler--
+assets -- resimler,stil dosyaları felan.
+componenets - komponentlerimizi buraya koyuyuruz.
+layouts -- .net deki master detail layaoutlar gibi.
+middleware -- orta katmanda tüm uygulamayı kontrol edebileceğimiz bir yer.
+nodemoduls -- yüklenen paketler burda.
+pages -- Uygulamamızın temelini oluşturan sayfalarımızı oluşturduğumuz yer.
+plugins -- Dışardan aldığımız 3.party js kütüphanelerini buraya ayacağız.
+statics -- static olarak sunucuda tutacağımız şeyler buraya koyacağız.
+store -- nuxt tanımlamaları burada yapacağız.
+nuxt.config.js  -- meta tag lar title vb ayarlar burada...
