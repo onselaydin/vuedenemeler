@@ -1,0 +1,166 @@
+nodejs kurmak gerekir.
+npm install -g create-nuxt-app
+create-nuxt-app projeadi
+1- ilk soru boş enter yapıyoruz.
+2- description - bir açıklama yaz ve enter yap.
+3- dil olarak javascipt seçiyoruz.
+4- paket yönetimi npm seçiyoruz.
+5- ui framework bişey seçmiyoruz.
+6- Module seçmiyoruz. (axios seçilebilir aslında webapi ile iletişim için)
+7- linting tool seçmiyoruz
+8- testing framework seçmiyoruz.
+9- Burası önemli Render modu Universal seçmeliyiz.
+10- Deployment target - nodejs
+11- Development tools - seçmiyoruz.
+
+To get started:
+
+        cd okipuapp
+        npm run dev
+
+  To build & start for production:
+
+        cd okipuapp
+        npm run build
+        npm run start
+
+--ücretsiz açık kaynak mail server--
+https://www.udemy.com/course/yazlm-gelistiriciler-icin-windows-server-yonetimi/learn/lecture/18551854#questions
+https://www.hmailserver.com/
+
+free antivirus. Gelen mailleri taramak için.
+http://www.clamwin.com/
+
+https://mxtoolbox.com/spf.aspx
+
+--deploy--
+https://docs.microsoft.com/en-us/iis/install/installing-publishing-technologies/installing-and-configuring-web-deploy-on-iis-80-or-later
+
+install web platform.
+https://www.microsoft.com/web/downloads/platform.aspx
+
+web platformu çalıştır ve içinde web deploy ara bul ve Add yap.
+.net aç + publish + Soldan IIS olanı seç + publish method Web Deploy seç. +
+server ip,site adı, server erişim için kullanıcı adı ve şifre girilip validate yap.
+not : 8172 nolu port açık olmalı.
+
+Remote Debug
+googledan visual studio remote tool bul.
+Not: Yazılımı geliştirdiğin vs ile sunucudaki debug toolu aynı versiyon olmalı.
+https://docs.microsoft.com/tr-tr/visualstudio/debugger/remote-debugging?view=vs-2019
+Not: Öncelikle Debug modda Publish yapmak lazım.
+Debug menusu + Attach to Process + Target bölümüne sunucu adresi ve remote debuggerın verdiği portu yaz. + Kullanıcı adı ve şifreyi yaz. 
+
+--Ücretsiz SSL sertifikası--
+https://www.win-acme.com/
+programı indir kur. wacs.exe yi admin modda çalıştır. Consol uygulaması açılacak.
+N (IIS) için olanı seçtik enter.
+2 yi seç ilerle.
+3 All Binding seçtik.
+1 seçtik.
+yes diyip ilerliyoruz.
+sertifika için bir eposta adresi giriyoruz.
+her şeye yes de.
+
+https://www.thingiverse.com/thing:4578338  -metric screw
+https://www.thingiverse.com/thing:4574948 -- kalem
+https://www.thingiverse.com/thing:4595974 -- diş fırçası
+https://www.thingiverse.com/ --gitar
+https://www.thingiverse.com/thing:698317 -- capo
+https://www.thingiverse.com/thing:3081 - vendo
+https://www.thingiverse.com/thing:542867 -- knop
+
+--Agile(Çevik)--
+Yazılım geliştirirken bürokrasiyi azaltmak,
+Yazılım geliştirme süreçlerinin daha insan odaklı tasarlamak,
+Başarısız yazılım projelerini azaltmak ve müşterileri mutlu etmek için çıkmıştır.
+
+Iterative yazılım geliştirme: Böl parçala geliştir.
+IID(Iterative and Incremental Development)
+Bir ürün ilk geliştirildiğinde iyi olmaz. iki ve ya üç defa geliştirmek gerekli.
+WaterFall (Şelale)= Tüm proje Analiz, Geliştirme, Test
+
+Lean yazılım geliştirme : Toyota geliştirmiş. Daha çok ürün/değer geliştirme.
+-Eleminate Waste
+israfın önlenmesi: öğreğin yazılımda müşterinin istemediği şeylerin eklenmemesi.
+Kalite yönetimini işçiye veriyorlar ve yetkilendiriyorlar. İşçi üretimi durdurabiliyor.
+RootCause(Kök problemi bulmak)
+-Amplifily Learning
+-Decide as Late as Possible (Geç karar vermek) Daha sağlıklı karar verilebilir.
+Fakat fazlada geç kalınmamalı default kararlar verilebilir.
+-Delivery as Fast as Possible(Müşteri hızlı teslimatı sever)
+-Empower the Team(Ekibi güçlendirmek) Çalışana ne kadar değer verirsen o sana o kadar değer verir.
+-Build Integrity In :Ortak problemlere ortak çözümler bulmak.
+-See the Whole Bütünü gözetlemek-Ekibin tamamına minimum hata hedefi koymak.
+
+Scrum yazılım geliştirme: Agile proje yönetim metodolojilerinden biridir.
+	Product Backlog; Proje için gerekli olan gereksinimler listesidir.
+	Sprint: Proje sprint denilen küçük kısımlara ayrılır. Scrum içerisindeki tüm aktiviteler sprint içerisinde gerçekleşir.1–2 haftalık süreçlerdir.
+	Scrum board; Bir sprint içerisinde yapılacak olan maddeler burada yönetilir.
+	Product Owner; Geliştirme takımı ve müşteri arasındaki iletişimi sağlar.
+	Scrum Master; Scrum kurallarını, teorilerini ve pratiklerini iyi bilir ve takımın bu kurallarını uygulamasından sorumlu kişidir.
+	Geliştirme Takımı; Bir Sprint’e alınan bütün işleri tamamlayacak özelliklere sahip kişilerdir.
+	Chicken Roller; Scrum’ın işleyişinde aktif olarak yer almayan kişilerdir. Müşteriler, satıcılar gibi.
+	Toplantılar
+	Sprint Planning; Product backlog ile belirtilen gereksinimler,
+	Daily Scrum; Her gün aynı yerde aynı saatte ayak üstü yapılan 15 dakikalık toplantılardır. 
+	Sprint Review; Her sprint sonunda yapılır. Yapılan sprint gözden geçirilir, ortaya çıkan ürün değerlendirilir.
+	Sprint Retrospective; Sprint boyunca yapılan işlerin kalitesinin, doğruların ve yanlışların değerlendirildiği toplantıdır.
+
+Extreme Programming : Scrumin gelişmişi More technical Practices
+
+--Agile Yaklaşımlar--
+Agile Manifesto.
+Süreçler ve araçlardan ziyade bireyler ve etkileşimlere
+Kapsamlı dökümantasyondan ziyade çalışan yazılıma
+Sözleşme pazarlıklarından ziyade müşteri ile işbirliğine
+Bir plana bağlı kalmaktan ziyade değişime karşılık vermeye
+değer vermeye kanaat getirdik.
+
+Üstteki olumsuz olanlar mesela araçlar değersizdir dememekte. Dikkat etmek lazım.
+Bireyler ve Bireyler arası etkileşim.Saygı,Doğru insan,Yetkinlik, bilgi, kapasite.
+Şeffaflık çok önemli. Şeffaf olunmazsa ekip arasında fısıldaşmalar oluşuyor ve bir sürü kirli bilgi ortalarda dolanıyor. Güçlü Takım olmak. Hizmetçi lider.
+
+Working Software over Comprehensive Documentation
+Çalışan yazılım kapsamlı dökümantasyondan daha değerlidir.
+Değer üretmeyen herşey israftır.
+Müşteri karşısında çalışan birşey görmediği sürece gerçekte ne istemediğini bilmez.
+Production ve Test Kodları Dökümandan çok daha önemli. Yeteri miktarda döküman yazılmalı.
+Dökümantasyonu koddan üretmek daha mantıklı.
+
+Customer Collaboration over Contract Negotation
+Müşteri ile işbirliği sözleşme müzakerelerinden daha değerlidir.
+Müşteri tarafından product owner ve müşteriye sürekli çalışan bir yazılımla gitmek.
+Tedarikçi ilişkileri ne kadar iyi olursa kendi işleride sağlıklı ilerler Müşteri bunu bilmeli. Gereksinimler zaman için yapılıyor ve yeni gereksinimler ortaya çıkıyor ve firma ek maliyet çıkartıyor. Bu müşterinin aleyhine bir durum.
+Toyota ile General Motors örneği var.
+
+Responding To Change over Following a Plan
+Değişime cevap vermek bir planı takip etmekten daha değerlidir.
+Adaptasyon, değişimi kabullenme, değişen şartlara göre yeniden plan yapmak daha önemli.
+Müşteri istediği zaman istediği şeyi değiştirir çok yanlış bir yaklaşımdır.
+
+
+
+
+Agile Prensipler(Agile Principles)
+Müşterinin istediğini en hızlı olacak şekilde ver.
+Müşteri ile sık sık iletişime geç. Hızlı bildirim almak çok önemli.
+Müşterinin isteklerini çok iyi anlamak gerekiyor.Eğer anlamıyorsan product manager,analist vb kişilerden yardım almalısın.
+Motive insanlar ile işi geliştir.Onlara gerekli ortamı,desteği sağla ve onlara güven.
+-Yüzyüze konuşmak en etkili yöntem. Anlık mesajlaşma,mail,telefon olabildiğince kullanma.
+Önce sözlü konuşup sonra yazılı teyit alma yöntemide kullanılabilir.
+Yazılım geliştiricileri tüm proje boyunca aşırı over time, baskı ve stres altında çalıştıramazsın.
+-Teknik mükemmelliyet,iyi tasarıma sürekli dikkat etmek çevikliği artırır.
+-Çevikte sürekli analiz, sürekli tasarım ve geliştirme yapılır.
+Sürekli geriye dönüp tasarımı değiştirmek gerekir.
+Basitlik-yapılmayan iş miktarını maximize etme sanatı.
+Ockham'ın usturası: Herşeyin birbirine eşit olduğu bir ortamda en basit açıklama doğruya en yatkın olanıdır. En basit açıklama büyük olasılıkla doğru olandır.
+örneğin nal sesi duyuyorsan atları düşün zebraları değil. :)
+Örneğin müşteri birşey istiyor şöyle yaparsak daha iyi demek çevik tasarıma ters bir felsefe.
+-En iyi mimariler, gereksinimler ve tasarımlar self-organize takımlardan çıkar.
+self-organize takım= Kendi içinde hareket edebilen, karar alabilen, dışarıya minimum bağımlı takım demektir.
+-Düzenli aralıklarla takım daha fazla nasıl verimli olunabilir üzerinde düşünmeli.
+
+Shu Ha Ri – Bir Çeviklik Benimseme Modeli. Aikido felsefesinden esinlenilmiştir.
+http://www.ilkimdilara.com/shu-ha-ri-bir-ceviklik-benimseme-modeli/
+yeni bir şey öğrenmeye nasıl yaklaşacağını anlamak için bir düşünme şeklidir
