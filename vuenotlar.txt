@@ -9,7 +9,7 @@ C:\testvue>vue init webpack-simple .
 C:\testvue>npm install
 C:\testvue> npm run dev
 .babelrc = ecmascript 6 yı 5 e çeviren konfügrasyon dosyasıdır.
-single file bir template 3 elemente sahip olmalıdır. 
+single file bir template 3 elemente sahip olmalıdır.
 <template></template> <script></script> ve <style></style>
 
 --ÖNEMLİ--
@@ -17,7 +17,7 @@ https://cli.vuejs.org/guide/creating-a-project.html#vue-create
 
 --Canlıya alma Build işlemi--
 # npm run build
-dist klasörü oluşuyor. index.html için <script src="/dist/build.js"></script> getiriyor. 
+dist klasörü oluşuyor. index.html için <script src="/dist/build.js"></script> getiriyor.
 index'i ve dist içini al sunucuya koy çalıştır.
 
 --yararlı linkler--
@@ -58,7 +58,7 @@ Yeni açılan bir komponeti main.js içine tanımla
 örneğin
 import Home from "./Home"
 
-Vue.component("lamb-component",Home) 
+Vue.component("lamb-component",Home)
 
 Not: p h vs etiketileri template içinde div içine almalıyız.
 
@@ -67,7 +67,7 @@ Not: p h vs etiketileri template içinde div içine almalıyız.
 <div>
     <lamp-status v-for="Lamp in 5" :key="Lamp"></lamp-status>
 </div>
-    
+
 </template>
 
 <script>
@@ -108,7 +108,7 @@ props : {
 -- Chiledden Parente veri göndermek--
 method içinde $emit ile yayma işlemi yapacağız.Emit yaymak demek.
 child=>Parent arası iletişim(Custom Events)
-Yaptığımız componentden çağırdığımız yere veri gönderme... 
+Yaptığımız componentden çağırdığımız yere veri gönderme...
 Bu child de bir metod UserDetail.vue
 sendToParent(){
     this.$emit("data","Onsel AYDIN");
@@ -128,7 +128,7 @@ main.js de export const eventBus = new Vue(); tanımlıyoruz.
 kullanacağımız componente import edeceğiz. script tagına
 import eventBus from "../main";
 
-chiledlar içinde eventbusları alacağımız,dinlebileceğimiz created oluşturacağız 
+chiledlar içinde eventbusları alacağımız,dinlebileceğimiz created oluşturacağız
 created(){
     eventBus.$on ile alım yapıyorum
 }
@@ -211,7 +211,7 @@ Baştaki Sondaki boşlukları temizlemek için v-model.trim yada v-model.lazy.tr
 
 --checkbox dan veri almak--
 önce data içinde bir array değişken oluştur.
-örneğin ilgi alanları grubunda kaç tane checkbox varsa model isimleri aynı olsun. 
+örneğin ilgi alanları grubunda kaç tane checkbox varsa model isimleri aynı olsun.
 
 --radio button--
 v-model değişkeni data içinde oluştur. Bu sefer array olmayacak.
@@ -232,7 +232,7 @@ https://github.com/onselaydin/vuedenemeler/tree/master/src/formlar
 props u metod içinde de kullanabiliriz. Bu örnekte switchName medounda myProps
 <script>
 	//props:["myProps"],
-	yada 
+	yada
 	props:{
 		myProps : {
 			type:String,
@@ -253,7 +253,7 @@ Not: Bir <form> tagı içinde bir button varsa gönderme işlemi yapmaya çalı�
 Aşağıdaki gibi prevent ile bu engellenebilir. prevent de bir Modifier dir.
 Buttona tıklandığında form yenilenmeyecek.
 
-<button 
+<button
     @click.prevent="submit"
     class="btn btn-primary">Gönder!
 </button>
@@ -489,10 +489,10 @@ https://console.firebase.google.com/
 
 --npm paketi yapmak--
 https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry
-npm login 
-bir klasör aç vue dosyalarını oraya koy. package.json dosyasını içine ekle. 
+npm login
+bir klasör aç vue dosyalarını oraya koy. package.json dosyasını içine ekle.
 Shell aç ve bu klasöre gir. > npm publish
-Paketi kaldırmak için shell e gir. > npm unpublish kaketadi -f 
+Paketi kaldırmak için shell e gir. > npm unpublish kaketadi -f
 
 
 https://bootswatch.com/
@@ -525,7 +525,7 @@ npm install vuelidate --save
 --Firebase Authentication--
 https://firebase.google.com/docs/reference/rest/auth
 https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
-yeni proje aç  + web app aç + Authentication + email yöneti seç + Etkinleştiri aç 
+yeni proje aç  + web app aç + Authentication + email yöneti seç + Etkinleştiri aç
 Projede kullanmak için api keyini al.
 uygulama örneği github da vuedenemeler de / vue-auth da.
 
@@ -554,7 +554,7 @@ https://ssr.vuejs.org/#what-is-server-side-rendering-ssr
 Kurulum
 npm install -g create-nuxt-app
 Uygulama oluşturmak
-önce bir klasör aç içine gir. 
+önce bir klasör aç içine gir.
 mkdir nuxttest
 cd nuxttest
 create-nuxt-app ./
@@ -594,3 +594,16 @@ plugins -- Dışardan aldığımız 3.party js kütüphanelerini buraya ayacağ�
 statics -- static olarak sunucuda tutacağımız şeyler buraya koyacağız.
 store -- nuxt tanımlamaları burada yapacağız.
 nuxt.config.js  -- meta tag lar title vb ayarlar burada...
+
+db.createUser(
+   {
+     user: "mynewuser",
+     pwd: "myuser123",
+     roles: [ "readWrite", "dbAdmin" ]
+   }
+);
+
+,
+  "ConnectionStrings": {
+    "MongoConnectionString": "mongodb://mongoadmin:abc123@157.230.105.22:27017/KnowledgeDb"
+  }
